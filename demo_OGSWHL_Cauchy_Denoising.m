@@ -1,7 +1,7 @@
 % Weighted Hyper-Laplacian Prior with Overlapping Group Sparsity for Image Restoration under Cauchy Noise
 % written by K.S. Jon, 20200426
 % Matlab Version 9.1.0.441655 (R2016b)
-%% Run weighted OGSHL for Cauchy noise removal
+%% Run weighted OGSHL for Cauchy noise removal 
 clear variables;
 close all;
 clc;
@@ -13,7 +13,7 @@ params.beta = [0.3 22]; % penalty parameter for ADMM
 params.sigma_w = 4;	% weighting parameter
 params.MaxIter = 500;	% maimum iteration number 
 
-fileList = {'baby.tif', 'boat.pgm', 'lena.pgm', 'parrot.png', 'cama(256).png', 'WStatn.tif', 'jelfih.png', 'wo_dhr.tif'};
+fileList = {'baby.tif', 'boat.pgm', 'lena.pgm', 'parrot.png', 'camman.png', 'WStatn.tif', 'jelfih.png', 'wo_dhr.tif'};
 if gamma == 5
     lambdaList = [84    95    90    94    97    90    83    80];
 else %gamma == 10

@@ -19,7 +19,6 @@ params.beta = [420 280 60]; % penalty parameter for ADMM
 if 0 	% Gaussian deblurring simulation
     H = fspecial('gaussian', [7 7], 3);
     mu_list = [19    24    24    24    24    26    28    14];
-    
     lamda_list = [37    56    38    61    63    52    33    23];
 else	% motion deblurring simulation
     H = fspecial('motion', 8, 30);
@@ -45,7 +44,7 @@ for j =1:size(fileList, 2)
     params.mu = mu_list(j);
     params.lambda = lamda_list(j);
     tic;
-    [out] = ADMOGSWHL_CAU_DEB(H, Bn, sqrt(r), params);
+    [out] = ADMOGSWHL_CAU_DEB(H, Bn, sqrt(r), params);% main procedure
     time = toc;
     x  = min(max(out.sol, 0), 1);
     % calculate quality metric for recovered image
